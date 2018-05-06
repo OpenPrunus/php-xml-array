@@ -1,0 +1,23 @@
+{
+    "name": "openprunus/php-xml-array",
+    "type": "library",
+    "license": "GPLv3",
+    "description": "PHP lib for convert array to xml",
+    "authors": [
+        {
+            "name": "OpenPrunus"
+        }
+    ],
+    "require": {
+        "php": ">=5.6.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~6.0"
+    },
+    "autoload": {
+        "classmap": [
+            "src/PhpXmlArray"
+        ]
+    },
+    "bin": ["bin/phpunit"]
+}
