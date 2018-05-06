@@ -1,7 +1,7 @@
 {
     "name": "openprunus/php-xml-array",
     "type": "library",
-    "license": "GPLv3",
+    "license": "LGPL-3.0",
     "description": "PHP lib for convert array to xml",
     "authors": [
         {
