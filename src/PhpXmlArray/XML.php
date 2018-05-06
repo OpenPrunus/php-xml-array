@@ -18,7 +18,7 @@ class XML
     /**
      * Constructor
      */
-    public function __ construct()
+    public function __construct()
     {
         $this->parseList = new ParseList();
         $this->xml = "";
