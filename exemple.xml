@@ -1,0 +1,51 @@
+<Root>
+    <Niveau1>
+        value
+    </Niveau1>
+    <Niveau1>
+        <Niveau2>
+            niveau 2 value
+        </Niveau2>
+        <Niveau2 attrbidule="toto">
+            value de niveau 2
+        </Niveau2>
+        <AutreBalise>
+            valeur
+        </AutreBalise>
+    </Niveau1>
+    <Niveau1 attrNiveau1="titi">
+        value
+    </Niveau1>
+</Root>
+
+[
+    "Root" => [
+        [
+            "Niveau1" => "value"
+        ],
+        [
+            "Niveau1" => [
+                [
+                    "Niveau2" => "niveau 2 value"
+                ],
+                [
+                    "Niveau2" => [
+                        "attributes" => [
+                            "attrbidule" => "toto"
+                        ],
+                        "Value" => "value de niveau 2"
+                    ]
+                ],
+                "AutreBalise" => "valeur"
+            ]
+        ],
+        [
+            "Niveau 1" => [
+                "attributes" => [
+                    "attrNiveau1" => "titi"
+                ],
+                "Value" => "value"
+            ]
+        ]
+    ]
+]
