@@ -52,10 +52,10 @@ $array = [
 $xmlInstance = new Xml();
 
 // For unformatted XML
-$unformattedConvertedXmlToArray = $xml->xmlFromArray($array);
+$unformattedConvertedXmlToArray = $xmlInstance->xmlFromArray($array);
 
 // For formatted XML
-$formattedConvertedXmlToArray = $xml->xmlFromArray($array, true);
+$formattedConvertedXmlToArray = $xmlInstance->xmlFromArray($array, true);
 
 
 ```
