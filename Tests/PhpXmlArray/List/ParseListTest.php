@@ -25,9 +25,9 @@ class ParseArrayTest extends TestCase
     {
         $array1 = [
             "Root" => [
-                ["Niveau1" => "value1"],
-                ["Niveau1" => "value2"],
-                ["Niveau1" => "value3"],
+                ["Level1" => "value1"],
+                ["Level1" => "value2"],
+                ["Level1" => "value3"],
                 "Test" => "value2",
                 "TestAvecAttribut" => [
                     "Attributes" => [
@@ -37,63 +37,63 @@ class ParseArrayTest extends TestCase
                 ],
                 [
                     "Toto" => [
-                        "Niveau2" => "valueNiveau2"
+                        "Level2" => "valueLevel2"
                     ]
                 ],
                 [
                     "Toto" => [
-                        "Niveau2" => "valueNiveau2",
-                        "NiveauIdem" => 4
+                        "Level2" => "valueLevel2",
+                        "LevelIdem" => 4
                     ]
                 ]
             ]
         ];
 
-        $expectedXml1 = "<Root><Niveau1>value1</Niveau1><Niveau1>value2</Niveau1><Niveau1>value3</Niveau1><Test>value2</Test><TestAvecAttribut foo=\"bar\">value :)</TestAvecAttribut><Toto><Niveau2>valueNiveau2</Niveau2></Toto><Toto><Niveau2>valueNiveau2</Niveau2><NiveauIdem>4</NiveauIdem></Toto></Root>";
+        $expectedXml1 = "<Root><Level1>value1</Level1><Level1>value2</Level1><Level1>value3</Level1><Test>value2</Test><TestAvecAttribut foo=\"bar\">value :)</TestAvecAttribut><Toto><Level2>valueLevel2</Level2></Toto><Toto><Level2>valueLevel2</Level2><LevelIdem>4</LevelIdem></Toto></Root>";
 
         $this->assertXmlStringEqualsXmlString($expectedXml1, $this->parseList->convertArrayToXml($array1));
 
         $array2 = [
             "Root" => [
                 [
-                    "Niveau1" => [
-                        "Niveau2" => [
-                            "Niveau3" => "test"
+                    "Level1" => [
+                        "Level2" => [
+                            "Level3" => "test"
                         ]
                     ]
                 ]
             ]
         ];
 
-        $expectedXml2 = "<Root><Niveau1><Niveau2><Niveau3>test</Niveau3></Niveau2></Niveau1></Root>";
+        $expectedXml2 = "<Root><Level1><Level2><Level3>test</Level3></Level2></Level1></Root>";
 
         $this->assertXmlStringEqualsXmlString($expectedXml2, $this->parseList->convertArrayToXml($array2));
 
         $array3 = [
             "Root" => [
                 [
-                    "Niveau1" => "value"
+                    "Level1" => "value"
                 ],
                 [
-                    "Niveau1" => [
+                    "Level1" => [
                         [
-                            "Niveau2" => "niveau 2 value"
+                            "Level2" => "Level 2 value"
                         ],
                         [
-                            "Niveau2" => [
+                            "Level2" => [
                                 "Attributes" => [
                                     "attrbidule" => "toto"
                                 ],
-                                "Value" => "value de niveau 2"
+                                "Value" => "value de Level 2"
                             ]
                         ],
                         "AutreBalise" => "valeur"
                     ]
                 ],
                 [
-                    "Niveau1" => [
+                    "Level1" => [
                         "Attributes" => [
-                            "attrNiveau1" => "titi"
+                            "attrLevel1" => "titi"
                         ],
                         "Value" => "value"
                     ]
@@ -101,7 +101,7 @@ class ParseArrayTest extends TestCase
             ]
         ];
 
-        $expectedXml3 = "<Root><Niveau1>value</Niveau1><Niveau1><Niveau2>niveau 2 value</Niveau2><Niveau2 attrbidule=\"toto\">value de niveau 2</Niveau2><AutreBalise>valeur</AutreBalise></Niveau1><Niveau1 attrNiveau1=\"titi\">value</Niveau1></Root>";
+        $expectedXml3 = "<Root><Level1>value</Level1><Level1><Level2>Level 2 value</Level2><Level2 attrbidule=\"toto\">value de Level 2</Level2><AutreBalise>valeur</AutreBalise></Level1><Level1 attrLevel1=\"titi\">value</Level1></Root>";
 
         $this->assertXmlStringEqualsXmlString($expectedXml3, $this->parseList->convertArrayToXml($array3));
     }

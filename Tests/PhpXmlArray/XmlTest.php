@@ -32,13 +32,13 @@ class XmlTest extends TestCase
      */
     public function testUnformattedParseList()
     {
-        $xml = "<Root><Niveau1><Niveau2><Niveau3>test</Niveau3></Niveau2></Niveau1></Root>";
+        $xml = "<Root><Level1><Level2><Level3>test</Level3></Level2></Level1></Root>";
         $array = [
             "Root" => [
                 [
-                    "Niveau1" => [
-                        "Niveau2" => [
-                            "Niveau3" => "test"
+                    "Level1" => [
+                        "Level2" => [
+                            "Level3" => "test"
                         ]
                     ]
                 ]
@@ -54,23 +54,23 @@ class XmlTest extends TestCase
      */
     public function testFormattedParseList()
     {
-        $xml = "<Root><Niveau1><Niveau2><Niveau3>test</Niveau3></Niveau2></Niveau1></Root>";
+        $xml = "<Root><Level1><Level2><Level3>test</Level3></Level2></Level1></Root>";
 
         $xmlExpected = "<?xml version=\"1.0\"?>
 <Root>
-    <Niveau1>
-        <Niveau2>
-            <Niveau3>test</Niveau3>
-        </Niveau2>
-    </Niveau1>
+    <Level1>
+        <Level2>
+            <Level3>test</Level3>
+        </Level2>
+    </Level1>
 </Root>";
 
         $array = [
             "Root" => [
                 [
-                    "Niveau1" => [
-                        "Niveau2" => [
-                            "Niveau3" => "test"
+                    "Level1" => [
+                        "Level2" => [
+                            "Level3" => "test"
                         ]
                     ]
                 ]
@@ -89,14 +89,14 @@ class XmlTest extends TestCase
     {
         $this->assertNull($this->xml->getSimpleXmlElement());
 
-        $xml = "<Root><Niveau1><Niveau2><Niveau3>test</Niveau3></Niveau2></Niveau1></Root>";
+        $xml = "<Root><Level1><Level2><Level3>test</Level3></Level2></Level1></Root>";
 
         $array = [
             "Root" => [
                 [
-                    "Niveau1" => [
-                        "Niveau2" => [
-                            "Niveau3" => "test"
+                    "Level1" => [
+                        "Level2" => [
+                            "Level3" => "test"
                         ]
                     ]
                 ]

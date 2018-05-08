@@ -20,28 +20,28 @@ use \PhpXmlArray\XML;
 $array = [
     "Root" => [
         [
-            "Niveau1" => "value"
+            "Level1" => "value"
         ],
         [
-            "Niveau1" => [
+            "Level1" => [
                 [
-                    "Niveau2" => "niveau 2 value"
+                    "Level2" => "Level 2 value"
                 ],
                 [
-                    "Niveau2" => [
+                    "Level2" => [
                         "Attributes" => [
                             "attrbidule" => "toto"
                         ],
-                        "Value" => "value de niveau 2"
+                        "Value" => "value de Level 2"
                     ]
                 ],
                 "AutreBalise" => "valeur"
             ]
         ],
         [
-            "Niveau1" => [
+            "Level1" => [
                 "Attributes" => [
-                    "attrNiveau1" => "titi"
+                    "attrLevel1" => "titi"
                 ],
                 "Value" => "value"
             ]
@@ -64,20 +64,20 @@ $formattedConvertedXmlToArray = $xmlInstance->xmlFromArray($array, true);
 ```
 $unformattedConvertedXmlToArray =
 
-<Root><Niveau1>value</Niveau1><Niveau1><Niveau2>niveau 2 value</Niveau2><Niveau2 attrbidule=\"toto\">value de niveau 2</Niveau2><AutreBalise>valeur</AutreBalise></Niveau1><Niveau1 attrNiveau1=\"titi\">value</Niveau1></Root>
+<Root><Level1>value</Level1><Level1><Level2>Level 2 value</Level2><Level2 attrbidule=\"toto\">value de Level 2</Level2><AutreBalise>valeur</AutreBalise></Level1><Level1 attrLevel1=\"titi\">value</Level1></Root>
 
 
 $formattedConvertedXmlToArray =
 
 <?xml version="1.0"?>
 <Root>
-  <Niveau1>value</Niveau1>
-  <Niveau1>
-    <Niveau2>niveau 2 value</Niveau2>
-    <Niveau2 attrbidule="toto">value de niveau 2</Niveau2>
+  <Level1>value</Level1>
+  <Level1>
+    <Level2>Level 2 value</Level2>
+    <Level2 attrbidule="toto">value de Level 2</Level2>
     <AutreBalise>valeur</AutreBalise>
-  </Niveau1>
-  <Niveau1 attrNiveau1="titi">value</Niveau1>
+  </Level1>
+  <Level1 attrLevel1="titi">value</Level1>
 </Root>
 
 ```
@@ -97,14 +97,12 @@ $array2 = [
         "Name" => "Doe",
         "FirstNames" => [
             "Attributes" => [
-                "Attribute" => [
                     "foo" => "bar"
-                ],
-                "Value" => [
-                    ["FirstName" => "Toto"],
-                    ["FirstName" => "Titi"],
-                    ["FirstName" => "Tata"]
-                ]
+            ],
+            "Value" => [
+                ["FirstName" => "Toto"],
+                ["FirstName" => "Titi"],
+                ["FirstName" => "Tata"]
             ]
         ],
         "Ages" => [
