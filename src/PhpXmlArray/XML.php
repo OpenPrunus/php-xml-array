@@ -12,8 +12,11 @@ class XML
     /** @var ParseList */
     protected $parseList;
 
+    /** @var \SimpleXMLElement */
+    protected $simpleXmlElement = null;
+
     /** @var string */
-    protected $xml;
+    protected $xml = "";
 
     /**
      * Constructor
@@ -21,7 +24,6 @@ class XML
     public function __construct()
     {
         $this->parseList = new ParseList();
-        $this->xml = "";
     }
 
     /**
@@ -29,18 +31,46 @@ class XML
      *
      * @return string
      */
-    public function xmlFromArray(array $array)
+    public function xmlFromArray(array $array, $indented = false)
     {
         $this->xml = $this->parseList->convertArrayToXml($array);
+
+        if ($indented) {
+            $this->simpleXmlElement = new \SimpleXMLElement($this->xml);
+            $dom = dom_import_simplexml($this->simpleXmlElement)->ownerDocument;
+            $dom->formatOutput = true;
+            $this->xml = $dom->saveXML();
+        }
 
         return $this->xml;
     }
 
     /**
+     * @codeCoverageIgnore
      * @return string
      */
     public function getXml()
     {
         return $this->xml;
+    }
+
+    /**
+     * @return \SimpleXMLElement
+     */
+    public function getSimpleXmlElement()
+    {
+        return $this->simpleXmlElement;
+    }
+
+    /**
+     * @param ParseList $parseList
+     *
+     * @return XML
+     */
+    public function setParseList(ParseList $parseList)
+    {
+        $this->parseList = $parseList;
+
+        return $this;
     }
 }
