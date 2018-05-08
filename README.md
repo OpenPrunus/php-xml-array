@@ -57,7 +57,6 @@ $unformattedConvertedXmlToArray = $xmlInstance->xmlFromArray($array);
 // For formatted XML
 $formattedConvertedXmlToArray = $xmlInstance->xmlFromArray($array, true);
 
-
 ```
 
 ### Results
@@ -80,5 +79,40 @@ $formattedConvertedXmlToArray =
   </Niveau1>
   <Niveau1 attrNiveau1="titi">value</Niveau1>
 </Root>
+
+```
+
+## Others array examples
+
+```php
+
+$array1 = [
+    "Name" => "Doe",
+    "FirstName" => "John",
+    "Age" => 30
+]
+
+$array2 = [
+    "Root" => [
+        "Name" => "Doe",
+        "FirstNames" => [
+            "Attributes" => [
+                "Attribute" => [
+                    "foo" => "bar"
+                ],
+                "Value" => [
+                    ["FirstName" => "Toto"],
+                    ["FirstName" => "Titi"],
+                    ["FirstName" => "Tata"]
+                ]
+            ]
+        ],
+        "Ages" => [
+            "Age1" => 30,
+            "Age2" => 31,
+            "Age3" => 32
+        ]
+    ]
+]
 
 ```
