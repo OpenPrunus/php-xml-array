@@ -25,7 +25,7 @@
 
          <testsuites>
              <testsuite>
-                 <directory suffix="Test.php">Tests/PhpXmlArray/List/</directory>
+                 <directory suffix="Test.php">Tests/PhpXmlArray/</directory>
              </testsuite>
          </testsuites>
          <filter>

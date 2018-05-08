@@ -51,7 +51,7 @@ class ParseArrayTest extends TestCase
 
         $expectedXml1 = "<Root><Niveau1>value1</Niveau1><Niveau1>value2</Niveau1><Niveau1>value3</Niveau1><Test>value2</Test><TestAvecAttribut foo=\"bar\">value :)</TestAvecAttribut><Toto><Niveau2>valueNiveau2</Niveau2></Toto><Toto><Niveau2>valueNiveau2</Niveau2><NiveauIdem>4</NiveauIdem></Toto></Root>";
 
-        $this->assertEquals($expectedXml1, $this->parseList->convertArrayToXml($array1));
+        $this->assertXmlStringEqualsXmlString($expectedXml1, $this->parseList->convertArrayToXml($array1));
 
         $array2 = [
             "Root" => [
@@ -67,7 +67,7 @@ class ParseArrayTest extends TestCase
 
         $expectedXml2 = "<Root><Niveau1><Niveau2><Niveau3>test</Niveau3></Niveau2></Niveau1></Root>";
 
-        $this->assertEquals($expectedXml2, $this->parseList->convertArrayToXml($array2));
+        $this->assertXmlStringEqualsXmlString($expectedXml2, $this->parseList->convertArrayToXml($array2));
 
         $array3 = [
             "Root" => [
@@ -103,6 +103,6 @@ class ParseArrayTest extends TestCase
 
         $expectedXml3 = "<Root><Niveau1>value</Niveau1><Niveau1><Niveau2>niveau 2 value</Niveau2><Niveau2 attrbidule=\"toto\">value de niveau 2</Niveau2><AutreBalise>valeur</AutreBalise></Niveau1><Niveau1 attrNiveau1=\"titi\">value</Niveau1></Root>";
 
-        $this->assertEquals($expectedXml3, $this->parseList->convertArrayToXml($array3));
+        $this->assertXmlStringEqualsXmlString($expectedXml3, $this->parseList->convertArrayToXml($array3));
     }
 }
