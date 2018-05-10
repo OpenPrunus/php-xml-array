@@ -90,7 +90,13 @@ $array1 = [
     "Name" => "Doe",
     "FirstName" => "John",
     "Age" => 30
-]
+];
+
+/*
+<Name>Doe</Name>
+<FirstName>John</FirstName>
+<Age>30</Age>
+*/
 
 $array2 = [
     "Root" => [
@@ -111,6 +117,58 @@ $array2 = [
             "Age3" => 32
         ]
     ]
-]
+];
+/*
+<Root>
+    <Name>Doe</Name>
+    <FisrtNames foo="bar">
+        <FirstName>Toto</FirstName>
+        <FirstName>Titi</FirstName>
+        <FirstName>Tata</FirstName>
+    </FirstNames
+    <Ages>
+        <Age1>30</Age1>
+        <Age2>31</Age2>
+        <Age3>32</Age3>
+    </Ages>
+</Root>
+*/
+
+$array3 = [
+    "Root" => [
+        "Attributes" => [
+            "test" => "value"
+        ],
+        "Value" => [
+            "Level1" => [
+                "Level2" => [
+                    "Level3" => "test"
+                ]
+            ]
+        ]
+    ]
+];
+
+/*
+<Root test="value">
+    <Level1>
+        <Level2>
+            <Level3>test</Level3>
+        </Level2>
+    </Level1>
+</Root>
+*/
+
+$array4 = [
+    "Root" => [
+        "Alone"
+    ]
+];
+
+/*
+<Root>
+    <Alone />
+</Root>
+*/
 
 ```
