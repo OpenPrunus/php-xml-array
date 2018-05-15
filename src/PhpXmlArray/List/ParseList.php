@@ -20,14 +20,14 @@ class ParseList
 
         foreach ($array as $key => $element) {
             if (is_array($element)) {
-                if (isset($element["Attributes"])) {
-                    foreach ($element['Attributes'] as $name => $value) {
+                if (isset($element["_attributes"])) {
+                    foreach ($element['_attributes'] as $name => $value) {
                         $attributes .= $name . "=\"" . $value . "\" ";
                     }
-                    if (isset($element["Value"])) {
-                        $subElement = $element["Value"];
-                        if (is_array($element["Value"])) {
-                            $subElement = $this->convertArrayToXml($element["Value"]);
+                    if (isset($element["_value"])) {
+                        $subElement = $element["_value"];
+                        if (is_array($element["_value"])) {
+                            $subElement = $this->convertArrayToXml($element["_value"]);
                         }
 
                         if (is_string($key)) {
