@@ -29,10 +29,10 @@ $array = [
                 ],
                 [
                     "Level2" => [
-                        "Attributes" => [
+                        "_attributes" => [
                             "attrbidule" => "toto"
                         ],
-                        "Value" => "value de Level 2"
+                        "_value" => "value de Level 2"
                     ]
                 ],
                 "AutreBalise" => "valeur"
@@ -40,10 +40,10 @@ $array = [
         ],
         [
             "Level1" => [
-                "Attributes" => [
+                "_attributes" => [
                     "attrLevel1" => "titi"
                 ],
-                "Value" => "value"
+                "_value" => "value"
             ]
         ]
     ]
@@ -102,10 +102,10 @@ $array2 = [
     "Root" => [
         "Name" => "Doe",
         "FirstNames" => [
-            "Attributes" => [
+            "_attributes" => [
                     "foo" => "bar"
             ],
-            "Value" => [
+            "_value" => [
                 ["FirstName" => "Toto"],
                 ["FirstName" => "Titi"],
                 ["FirstName" => "Tata"]
@@ -136,10 +136,10 @@ $array2 = [
 
 $array3 = [
     "Root" => [
-        "Attributes" => [
+        "_attributes" => [
             "test" => "value"
         ],
-        "Value" => [
+        "_value" => [
             "Level1" => [
                 "Level2" => [
                     "Level3" => "test"
