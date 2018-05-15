@@ -30,10 +30,10 @@ class ParseArrayTest extends TestCase
                 ["Level1" => "value3"],
                 "Test" => "value2",
                 "TestAvecAttribut" => [
-                    "Attributes" => [
+                    "_attributes" => [
                         "foo" => "bar"
                     ],
-                    "Value" => "value :)"
+                    "_value" => "value :)"
                 ],
                 [
                     "Toto" => [
@@ -81,10 +81,10 @@ class ParseArrayTest extends TestCase
                         ],
                         [
                             "Level2" => [
-                                "Attributes" => [
+                                "_attributes" => [
                                     "attrbidule" => "toto"
                                 ],
-                                "Value" => "value de Level 2"
+                                "_value" => "value de Level 2"
                             ]
                         ],
                         "AutreBalise" => "valeur"
@@ -92,10 +92,10 @@ class ParseArrayTest extends TestCase
                 ],
                 [
                     "Level1" => [
-                        "Attributes" => [
+                        "_attributes" => [
                             "attrLevel1" => "titi"
                         ],
-                        "Value" => "value"
+                        "_value" => "value"
                     ]
                 ]
             ]
@@ -107,10 +107,10 @@ class ParseArrayTest extends TestCase
 
         $array = [
             "Root" => [
-                "Attributes" => [
+                "_attributes" => [
                     "test" => "value"
                 ],
-                "Value" => [
+                "_value" => [
                     "Level1" => [
                         "Level2" => [
                             "Level3" => "test"
@@ -126,7 +126,7 @@ class ParseArrayTest extends TestCase
 
         $array = [
             "Root" => [
-                "Attributes" => [
+                "_attributes" => [
                     "test" => "value"
                 ]
             ]
